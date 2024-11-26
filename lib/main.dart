@@ -1,4 +1,5 @@
 import 'package:blog/blog_post.dart';
+import 'package:blog/my_post.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType){
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: BlogPostView(),
+          home: MyPostView(),
         );
       }
     );
