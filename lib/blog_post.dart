@@ -14,7 +14,7 @@ class BlogPostView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: Image.asset(
+        floatingActionButton: SvgPicture.asset(
           AppSVGs.floatingBookmark,
           height: 36,
         ),
@@ -23,7 +23,7 @@ class BlogPostView extends StatelessWidget {
           backgroundColor: AppColors.white,
           leading: Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Image.asset(AppSVGs.backIcon),
+            child: SvgPicture.asset(AppSVGs.backIcon),
           ),
           title: Image.asset(
             AppImages.app_icon,
