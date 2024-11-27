@@ -1,6 +1,8 @@
 import 'package:blog/blog_post.dart';
+import 'package:blog/edit_post.dart';
 import 'package:blog/my_post.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType){
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           home: MyPostView(),
         );

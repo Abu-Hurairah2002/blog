@@ -1,7 +1,10 @@
+import 'package:blog/edit_post.dart';
 import 'package:blog/utils/images.dart';
 import 'package:blog/utils/svgs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
@@ -24,7 +27,9 @@ class MyPostView extends StatelessWidget {
           backgroundColor: AppColors.white,
           leading: Padding(
             padding: const EdgeInsets.all(12.0),
-            child: SvgPicture.asset(AppSVGs.backIcon,),
+            child: InkWell(
+                onTap: (){},
+                child: SvgPicture.asset(AppSVGs.backIcon,)),
           ),
           title: Image.asset(
             AppImages.app_icon,
@@ -34,7 +39,9 @@ class MyPostView extends StatelessWidget {
           actions: [
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: SvgPicture.asset(AppSVGs.edit),
+              child: InkWell(
+                onTap: (){Get.to(()=>EditPostView());},
+                  child: SvgPicture.asset(AppSVGs.edit)),
             )
           ],
         ),
