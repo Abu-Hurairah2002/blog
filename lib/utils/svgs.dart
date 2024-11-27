@@ -6,4 +6,5 @@ class AppSVGs {
   static const String save = "assets/svgs/Vector2.svg";
   static const String discard = "assets/svgs/Vector (1).svg";
   static const String publish = "assets/svgs/publish.svg";
+  static const String forward = "assets/svgs/_.svg";
 }

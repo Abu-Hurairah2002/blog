@@ -1,3 +1,4 @@
+import 'package:blog/authentication_screens/sign_up.dart';
 import 'package:blog/blog_post.dart';
 import 'package:blog/edit_post.dart';
 import 'package:blog/my_post.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType){
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: MyPostView(),
+          home: SignUpView(),
         );
       }
     );
