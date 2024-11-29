@@ -83,7 +83,7 @@ class BlogPostView extends StatelessWidget {
                               color: AppColors.grey),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
                 Row(

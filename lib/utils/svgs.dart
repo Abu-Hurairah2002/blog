@@ -7,4 +7,11 @@ class AppSVGs {
   static const String discard = "assets/svgs/Vector (1).svg";
   static const String publish = "assets/svgs/publish.svg";
   static const String forward = "assets/svgs/_.svg";
+  static const String trending = "assets/svgs/trending.svg";
+  static const String search = "assets/svgs/Search icon.svg";
+  static const String profile = "assets/svgs/profile.svg";
+  static const String bookmark = "assets/svgs/bookmark.svg";
+  static const String newBlog = "assets/svgs/Create new blog icon.svg";
+  static const String selectedProfile = "assets/svgs/Vector (2).svg";
+  static const String selectedBookmark = "assets/svgs/selectedBookmark.svg";
 }

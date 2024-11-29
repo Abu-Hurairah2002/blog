@@ -1,5 +1,7 @@
 import 'package:blog/authentication_screens/sign_up.dart';
 import 'package:blog/blog_post.dart';
+import 'package:blog/bottomAppBar_views/bottomApp_bar.dart';
+import 'package:blog/bottomAppBar_views/trending_screen.dart';
 import 'package:blog/edit_post.dart';
 import 'package:blog/my_post.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType){
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: SignUpView(),
+          home: TrendingScreenView(),
         );
       }
     );
