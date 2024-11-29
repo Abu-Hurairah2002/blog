@@ -1,16 +1,5 @@
-import 'package:blog/blog_post.dart';
-import 'package:blog/constants/appColor.dart';
-import 'package:blog/utils/images.dart';
-import 'package:blog/utils/svgs.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:blog/exports.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
-
-import '../custom_buttons/icon_elevatedButton.dart';
-import '../custom_fields/text_field.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});

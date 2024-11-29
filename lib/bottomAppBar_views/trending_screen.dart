@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
-
-import '../constants/appColor.dart';
-import '../custom_buttons/elevatedButtons.dart';
-import '../utils/images.dart';
-import '../utils/svgs.dart';
+import 'package:blog/exports.dart';
 
 class TrendingScreenView extends StatelessWidget {
   const TrendingScreenView({super.key});
