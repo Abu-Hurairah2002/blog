@@ -24,3 +24,6 @@ export  'package:blog/views/edit_post.dart';
 export  'package:blog/views/my_post.dart';
 export  'package:flutter/material.dart';
 export  'package:sizer/sizer.dart';
+
+export  'package:curved_navigation_bar/curved_navigation_bar.dart';
+export  'package:flutter/material.dart';

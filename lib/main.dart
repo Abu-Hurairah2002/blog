@@ -1,5 +1,6 @@
 import 'package:blog/bottomAppBar_views/my_bookmarks.dart';
 import 'package:blog/bottomAppBar_views/my_profile.dart';
+import 'package:blog/bottomApp_bar/bottomApp_bar.dart';
 import 'package:blog/exports.dart';
 import 'package:blog/provider/auth_provider.dart';
 import 'package:blog/views/start_screen.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType){
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: MyProfileView(),
+          home: BottomNavigation(),
         );
       }
     );

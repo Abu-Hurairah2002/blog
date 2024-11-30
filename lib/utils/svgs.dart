@@ -8,7 +8,9 @@ class AppSVGs {
   static const String publish = "assets/svgs/publish.svg";
   static const String forward = "assets/svgs/_.svg";
   static const String trending = "assets/svgs/trending.svg";
+  static const String activeTrending="assets/svgs/activetrending.svg";
   static const String search = "assets/svgs/Search icon.svg";
+  static const String activeSearch = "assets/svgs/activesearch.svg";
   static const String profile = "assets/svgs/profile.svg";
   static const String bookmark = "assets/svgs/bookmark.svg";
   static const String newBlog = "assets/svgs/Create new blog icon.svg";
