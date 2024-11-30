@@ -9,7 +9,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import 'constants/appColor.dart';
+import '../constants/appColor.dart';
 
 class EditPostView extends StatelessWidget {
   const EditPostView({super.key});

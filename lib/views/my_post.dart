@@ -1,4 +1,4 @@
-import 'package:blog/edit_post.dart';
+import 'package:blog/views/edit_post.dart';
 import 'package:blog/utils/images.dart';
 import 'package:blog/utils/svgs.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import 'constants/appColor.dart';
+import '../constants/appColor.dart';
 
 
 class MyPostView extends StatelessWidget {
