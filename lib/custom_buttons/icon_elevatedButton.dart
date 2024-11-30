@@ -1,65 +1,62 @@
-import 'package:blog/authentication_screens/sign_up.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:blog/exports.dart';
 
-import 'package:blog/constants/appColor.dart';
-import 'package:sizer/sizer.dart';
+class CustomButton extends StatelessWidget {
+  final Widget? child; // Optional: Widget inside the button
+  final String? text; // Optional: Text inside the button
+  final Color? textColor; // Optional: Text color
+  final double width; // Button width
+  final double height; // Button height
+  final VoidCallback onPressed; // Action to perform on button press
+  final Color? backgroundColor; // Optional background color
+  final bool enableBorder; // Flag to enable/disable border
+  final Color? borderColor; // Optional border color
+  final double borderRadius; // Border radius
 
-class CustomElevatedIconButton extends StatelessWidget {
-  final String text;
-  final String svgIconPath;
-  final VoidCallback onPressed;
-  final Color foregroundColor;
-  final Color backgroundColor;
-  final double borderRadius;
-  final double iconSize;
-
-  const CustomElevatedIconButton({
+  const CustomButton({
     Key? key,
-    required this.text,
-    required this.svgIconPath,
+    this.child, // Optional
+    this.text, // Optional
+    this.textColor = Colors.black, // Default: Black text
+    required this.width,
+    required this.height,
     required this.onPressed,
-    this.borderRadius = 20.0,
-    this.iconSize = 24.0,
-    required this.foregroundColor,
-    required this.backgroundColor,
-  }) : super(key: key);
+    this.backgroundColor, // Optional: Defaults to null
+    this.enableBorder = false, // Default: Border is disabled
+    this.borderColor, // Optional: Only used when `enableBorder` is true
+    this.borderRadius = 5.0, // Default rounded corners
+  })  : assert(
+  child == null || text == null, // Ensure only one is used at a time
+  "Provide either 'child' or 'text', not both."),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+    return SizedBox(
+      width: width,
+      height: height,
       child: ElevatedButton(
-        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
+          backgroundColor:
+          backgroundColor ?? Colors.transparent, // Default: Transparent
+          side: enableBorder
+              ? BorderSide(
+            color: borderColor ?? Colors.black, // Default border color
+            width: 1.0,
+          )
+              : BorderSide.none, // No border if `enableBorder` is false
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(
+                borderRadius), // Customizable rounded corners
           ),
-          padding: EdgeInsets.symmetric(vertical: 3.h,horizontal: 15.w),
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+        onPressed: onPressed,
+        child: child ??
             Text(
-              text,
-              style: GoogleFonts.lora(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-                color: AppColors.white,
+              text ?? "", // Use `text` if no child is provided
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                color: textColor,
               ),
             ),
-            SizedBox(width: 8.w), // Space between text and icon
-            SvgPicture.asset(
-              svgIconPath,
-              height: iconSize,
-              width: iconSize,
-              color: foregroundColor,
-            ),
-          ],
-        ),
       ),
     );
   }

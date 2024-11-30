@@ -1,57 +1,116 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:blog/exports.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-import '../constants/appColor.dart';
-
-class TextfieldClass extends StatelessWidget {
-  final TextEditingController controller;
-  final String hintname;
-  final TextInputType textInputType;
-  final TextCapitalization textCapitalization;
+class CustomTextField extends StatelessWidget {
+  final String name;
+  final String? labelText;
+  final String? hintText;
+  final Icon? prefixIcon;
+  final Widget? suffixIcon;
   final bool obscureText;
+  final String? Function(String?)? validator;
+  final TextInputAction textInputAction;
+  final Function()? onTap;
+  final String? initialValue;
+  final bool readOnly;
+  final Color? fillColor;
+  final TextEditingController? controller;
+  final void Function(String?)? onChanged;
+  final VoidCallback? onEditComplete;
+  final int maxLines;
+  final int? minLines;
+  final TextInputType keyboardType;
+  final EdgeInsets? contentPadding;
+  final bool isErrorState;
 
-  const TextfieldClass({
+  const CustomTextField({
     super.key,
-    required this.controller,
-    required this.hintname,
-    this.textCapitalization = TextCapitalization.none,
-    required this.textInputType,
-    required this.obscureText,
+    this.labelText,
+    required this.name,
+    this.hintText,
+    this.onEditComplete,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.controller,
+    this.onChanged,
+    this.obscureText = false,
+    this.validator,
+    this.initialValue,
+    this.textInputAction = TextInputAction.done,
+    this.onTap,
+    this.fillColor = AppColors.white,
+    this.readOnly = false,
+    this.keyboardType = TextInputType.name,
+    this.maxLines = 1,
+    this.minLines,
+    this.contentPadding,
+    this.isErrorState = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 15),
-      child: TextField(
-        enabled: true,
+    double height = MediaQuery.sizeOf(context).height;
+
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width * 0.9,
+      child: FormBuilderTextField(
+        textInputAction: textInputAction,
+        validator: validator,
         controller: controller,
-        textCapitalization: textCapitalization,
-        maxLines: 1,
-        keyboardType: textInputType,
+        onEditingComplete: onEditComplete,
+        onChanged: onChanged,
+        onTap: onTap,
+        name: name,
+        readOnly: readOnly,
+        initialValue: initialValue,
+        style: Theme.of(context).textTheme.bodySmall,
+        cursorColor: AppColors.black,
         obscureText: obscureText,
-        textAlign: TextAlign.start,
-        style: GoogleFonts.roboto(
-          color: AppColors.grey,
-          fontWeight: FontWeight.w400,
-          fontSize: 12,
-        ),
+        keyboardType: keyboardType,
+        maxLines: maxLines,
+        minLines: minLines,
         decoration: InputDecoration(
-          fillColor: AppColors.white,
-          filled: true,
-          hintText: hintname,
-          hintStyle: GoogleFonts.roboto(
-            color: AppColors.grey,
-            fontWeight: FontWeight.w400,
-            fontSize: 12,
+          contentPadding: contentPadding,
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
+          hintText: hintText,
+          hintStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+            letterSpacing: 1,
+            color: AppColors.black.withOpacity(0.5),
+          ),
+          labelText: labelText, // Correct property
+          labelStyle: Theme.of(context)
+              .textTheme
+              .bodySmall
+              ?.copyWith(color: AppColors.grey),
+          fillColor: fillColor,
+          filled: false,
+          enabled: true,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(height * 0.010),
+            borderSide: const BorderSide(
+              color: AppColors.grey,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: AppColors.grey),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.circular(height * 0.010),
+            borderSide: const BorderSide(
+              width: 1.0,
+              color: AppColors.grey,
+            ),
           ),
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.grey),
-              borderRadius: BorderRadius.all(Radius.circular(10))),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(height * 0.010),
+            borderSide: const BorderSide(
+              color: AppColors.grey,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(height * 0.010),
+            borderSide: const BorderSide(
+              color: AppColors.grey,
+            ),
+          ),
         ),
       ),
     );
